@@ -20,11 +20,11 @@ li {
 
 i {
     color:
-    #4aa596
+        #4aa596
 }
 
 #blue {
-    color: #008e98 
+    color: #008e98
 }
 
 header {
@@ -60,6 +60,35 @@ body {
     padding: 5px;
     color: black;
     border-radius: 10vh;
+}
+
+.post-title {
+    font-size: 4.5vh;
+    text-align: center;
+    margin-top: 1vh;
+    font-family: 'Big Shoulders Text', cursive;
+
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.post-category {
+    font-size: 3.5vh;
+    text-align: center;
+    background-color: #6faf99;
+    color: white;
+    border-radius: 1vh;
+    font-weight: 600;
+    display: inline-block;
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+.post-date {
+    text-align: center;
 }
 
 /* Detail Page */

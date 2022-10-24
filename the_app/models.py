@@ -3,13 +3,14 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 OPTIONS = (
-    ('S', 'Storytime'),
-    ('V', 'Vent'),
-    ('C', 'Confession'),
-    ('I', 'Idea'),
-    ('A', 'Advice'),
-    ('O', 'Opionion'),
-    ('W', 'Creative Writing')
+    ('S', 'STORY'),
+    ('V', 'VENT'),
+    ('C', 'CONFESSION'),
+    ('I', 'IDEA'),
+    ('A', 'ADVICE'),
+    ('O', 'OPINION'),
+    ('W', 'CREATIVE WRITING'),
+    ('F', 'FUN FACT')
 )
 
 class Post(models.Model):

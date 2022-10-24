@@ -1,17 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 <div class="card" id="detail-card">
     <div class="card-content">
-        <h1>{{ post.title }}</h1>
+        <h1 class="post-title">{{ post.title }}</h1>
         <form action="{% url 'add_category' post.id %}" method="post">
             {% csrf_token %} {{ category_form.as_p }}
             <input type="submit" class="btn" value="Add Category">
           </form>
         <table class="striped">
-            <thead>
-                <tr>
-                    <th>Category</th>
-                </tr>
-            </thead>
             <tbody>
                 {% for category in post.category_set.all %}
                 <tr>
