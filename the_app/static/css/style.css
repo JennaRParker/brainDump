@@ -47,7 +47,6 @@ body {
     scroll-behavior: smooth;
     max-height: 65vh;
     overflow: auto;
-    box-shadow: 10px 10px 10px #fe9f61;
 }
 
 .post {
@@ -60,6 +59,9 @@ body {
     padding: 5px;
     color: black;
     border-radius: 10vh;
+    box-shadow: 10px 10px 30px #fe9f61;
+    margin-bottom: 5vh;
+    margin-top: 3vh
 }
 
 .post-title {
