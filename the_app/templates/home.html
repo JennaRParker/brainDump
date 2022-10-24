@@ -1,6 +1,16 @@
 {% extends 'base.html' %} {% block content %}
 
-    <h1>Home</h1>
+{% if output %}
+    <div class="post-container">
+        {% for post in output %}
+        <div class="post">
+            <p>{{ post.text}}</p>
+            <p>{{ post.date }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No Posts Yet</p>
+    {% endif %}
 
-    
 {% endblock %}
