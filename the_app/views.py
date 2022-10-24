@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
+from the_app.forms import CategoryForm
 from .models import Post
 
 def home(request):
@@ -9,7 +11,8 @@ def home(request):
 
 def post_detail(request, post_id):
         post = Post.objects.get(id=post_id)
-        return render(request,'detail.html', {'post': post})
+        category_form = CategoryForm()
+        return render(request,'detail.html', {'post': post, 'category_form': category_form})
 
 class PostCreate(CreateView):
     model = Post
