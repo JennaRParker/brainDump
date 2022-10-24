@@ -1,7 +1,6 @@
-from http.client import NETWORK_AUTHENTICATION_REQUIRED
 from django.shortcuts import redirect, render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-
+from django.contrib.auth.forms import UserCreationForm
 from the_app.forms import CategoryForm
 from .models import Post
 
@@ -40,3 +39,21 @@ def add_category(request, post_id):
         new_category.post_id=post_id
         new_category.save()
     return redirect('detail', post_id=post_id)
+
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    # This is how to create a 'user' form object
+    # that includes the data from the browser
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      # This will add the user to the database
+      user = form.save()
+      # This is how we log a user in via code
+      return redirect('login')
+    else:
+      error_message = 'Invalid sign up - try again'
+  # A bad POST or a GET request, so render signup.html with an empty form
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'registration/signup.html', context)

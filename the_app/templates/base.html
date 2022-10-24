@@ -25,9 +25,11 @@
     <footer>
         <div class="row">
             <ul class="center">
+                {% if user.is_authenticated %}
                 <li><a href="/home"><i class="large material-icons" id="orange">home</i></a></li>
                 <li><a href="/add"><i class="large material-icons" id="blue">add_box</i></a></li>
                 <li><a href="/about"><i class="large material-icons" id="orange">lightbulb_outline</i></a></li>
+                {% endif %}
             </ul>
         </div>
     </footer>
