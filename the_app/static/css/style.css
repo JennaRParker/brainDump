@@ -1,0 +1,11 @@
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+li {
+    display: inline;
+    display: inline-block;
+    margin: .5vh
+}

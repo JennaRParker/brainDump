@@ -1,16 +1,29 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brain Dump</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 </head>
+
 <body>
-    
+    <main class="container">{% block content %} {% endblock %}</main>
+    <footer>
+        <div class="row">
+            <ul class="center">
+                <li><a href="/home"><i class="large material-icons">home</i></a></li>
+                <li><a href="/add"><i class="large material-icons">add_box</i></a></li>
+                <li><a href="/about"><i class="large material-icons">lightbulb_outline</i></a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
+
 </html>
