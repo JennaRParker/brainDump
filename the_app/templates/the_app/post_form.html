@@ -7,13 +7,4 @@
     </table>
     <input type="submit" value="Submit!" class="btn" />
 </form>
-
-<form method="post">
-    {% csrf_token %} {{ category_form.as_p }}
-    <input type="submit" class="btn" value="Add Category" />
-  </form>
-<script>
-  var selectEl = document.getElementById('id_option');
-  M.FormSelect.init(selectEl);
-</script>
 {% endblock %}

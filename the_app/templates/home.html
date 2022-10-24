@@ -1,16 +1,18 @@
 {% extends 'base.html' %} {% block content %}
 
 {% if output %}
-    <div class="post-container">
-        {% for post in output %}
+<div class="post-container">
+    {% for post in output %}
+    <a href="{% url 'detail' post.id %}">
         <div class="post">
             <p>{{ post.text}}</p>
             <p>{{ post.date }}</p>
         </div>
-        {% endfor %}
-    </div>
-    {% else %}
-    <p>No Posts Yet</p>
-    {% endif %}
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<p>No Posts Yet</p>
+{% endif %}
 
 {% endblock %}

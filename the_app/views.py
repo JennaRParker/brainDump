@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from http.client import NETWORK_AUTHENTICATION_REQUIRED
+from django.shortcuts import redirect, render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from the_app.forms import CategoryForm
 from .models import Post
+
+def about(request):
+    return render(request, 'about.html')
 
 def home(request):
     output = Post.objects.all()
@@ -29,5 +33,10 @@ class PostDelete(DeleteView):
     model = Post
     success_url = '/home/'
 
-def about(request):
-    return render(request, 'about.html')
+def add_category(request, post_id):
+    form = CategoryForm(request.POST)
+    if form.is_valid():
+        new_category = form.save(commit=False)
+        new_category.post_id=post_id
+        new_category.save()
+    return redirect('detail', post_id=post_id)

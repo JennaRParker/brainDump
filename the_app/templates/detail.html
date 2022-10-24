@@ -1,12 +1,31 @@
 {% extends 'base.html' %} {% block content %}
 <div class="card">
     <div class="card-content">
+
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in post.category_set.all %}
+                <tr>
+                    <td>{{category.get_option_display}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
       <p>{{ post.text }}</p>
       <p>{{ post.date }}</p>
     </div>
     <div class="card-action">
         <a href="{% url 'post_update' post.id %}">Edit</a>
         <a href="{% url 'post_delete' post.id %}">Delete</a>
-      </div>
+    </div>
   </div>
+  <script>
+    var selectEl = document.getElementById('id_option');
+    M.FormSelect.init(selectEl);
+  </script>
 {% endblock %}

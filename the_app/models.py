@@ -9,7 +9,7 @@ OPTIONS = (
     ('I', 'Idea'),
     ('A', 'Advice'),
     ('O', 'Opionion'),
-    ('W', 'Create Writing')
+    ('W', 'Creative Writing')
 )
 
 class Post(models.Model):
