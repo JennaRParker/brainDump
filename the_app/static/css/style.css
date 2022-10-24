@@ -91,6 +91,13 @@ h2 {
     text-align: center;
 }
 
+.no {
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 8vh;
+    text-align: center;
+    justify-content: center;
+}
+
 /* Detail Page */
 
 #detail-card {
@@ -98,4 +105,44 @@ h2 {
     scroll-behavior: smooth;
     max-height: 65vh;
     overflow: auto;
+}
+
+.text {
+    font-size: 3vh
+}
+
+/* About Page */
+
+.info {
+    padding-bottom: 20vh;
+    scroll-behavior: smooth;
+    max-height: 65vh;
+    overflow: auto; 
+}
+
+.cat {
+    text-align: center;
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 5vh;
+    margin-bottom: 0;
+    color: #fe9f61
+}
+
+.exp {
+    text-align: center;
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 4vh;
+    margin-top: 0;
+    color: gray
+}
+
+.braindump {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.para {
+    text-align: center;
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 4vh;
+    color:#4aa596
 }
