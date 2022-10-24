@@ -7,6 +7,10 @@ def home(request):
     context = {'output': output}
     return render(request, 'home.html', context)
 
+def post_detail(request, post_id):
+        post = Post.objects.get(id=post_id)
+        return render(request,'detail.html', {'post': post})
+
 class PostCreate(CreateView):
     model = Post
     fields = ('text',)
