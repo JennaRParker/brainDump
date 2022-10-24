@@ -60,5 +60,13 @@ body {
     padding: 5px;
     color: black;
     border-radius: 10vh;
+}
 
+/* Detail Page */
+
+#detail-card {
+    padding-bottom: 20vh;
+    scroll-behavior: smooth;
+    max-height: 65vh;
+    overflow: auto;
 }

@@ -20,14 +20,14 @@ def post_detail(request, post_id):
 
 class PostCreate(CreateView):
     model = Post
-    fields = ('text',)
+    fields = ('title', 'text',)
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
 class PostUpdate(UpdateView):
     model = Post
-    fields = ['text',]
+    fields = ['text', 'title']
 
 class PostDelete(DeleteView):
     model = Post

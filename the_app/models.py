@@ -15,6 +15,7 @@ OPTIONS = (
 class Post(models.Model):
     text = models.TextField(max_length=1000)
     date = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(max_length=30, default='That time when..')
     #comment
     #likes
     #dislikes

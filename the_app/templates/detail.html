@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <div class="card" id="detail-card">
     <div class="card-content">
+        <h1>{{ post.title }}</h1>
         <form action="{% url 'add_category' post.id %}" method="post">
             {% csrf_token %} {{ category_form.as_p }}
             <input type="submit" class="btn" value="Add Category">
@@ -23,7 +24,7 @@
       <p>{{ post.date }}</p>
     </div>
     <div class="card-action">
-        <a href="{% url 'post_update' post.id %}">Edit Text</a>
+        <a href="{% url 'post_update' post.id %}">Edit Text and Title</a>
         <a href="{% url 'post_delete' post.id %}">Delete</a>
     </div>
   </div>
