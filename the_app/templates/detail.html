@@ -14,14 +14,18 @@
       <p class="text">{{ post.text }}</p>
       <p>{{ post.date }}</p>
     </div>
-    <form action="{% url 'add_category' post.id %}" method="post">
-        {% csrf_token %} {{ category_form.as_p }}
-        <input type="submit" class="btn" value="Add Category">
-      </form>
     <div class="card-action">
         <a href="{% url 'post_update' post.id %}">Edit Text and Title</a>
         <a href="{% url 'post_delete' post.id %}">Delete</a>
     </div>
+    <form action="{%url 'add_comment' post.id %}" method="post">
+        {% csrf_token %} {{ comment_form.as_p }}
+        <input type="submit" class="btn" value="Comment" />
+      </form>
+    {% for comment in post.comment_set.all %}
+    <p>{{comment.text}}</p>
+    <p>{{comment.date}}</p>
+    {% endfor %}
   </div>
   <script>
     var selectEl = document.getElementById('id_option');

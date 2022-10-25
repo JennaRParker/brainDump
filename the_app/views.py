@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm
-from the_app.forms import CategoryForm
+from the_app.forms import CommentForm
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -17,8 +17,8 @@ def home(request):
 
 def post_detail(request, post_id):
         post = Post.objects.get(id=post_id)
-        category_form = CategoryForm()
-        return render(request,'detail.html', {'post': post, 'category_form': category_form})
+        comment_form = CommentForm()
+        return render(request,'detail.html', {'post': post, 'comment_form': comment_form})
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
@@ -36,13 +36,19 @@ class PostDelete(LoginRequiredMixin, DeleteView):
     success_url = '/home/'
 
 @login_required
-def add_category(request, post_id):
-    form = CategoryForm(request.POST)
+def add_comment(request, post_id):
+    form = CommentForm(request.POST)
     if form.is_valid():
-        new_category = form.save(commit=False)
-        new_category.post_id=post_id
-        new_category.save()
+        new_comment = form.save(commit=False)
+        new_comment.post_id=post_id
+        new_comment.save()
     return redirect('detail', post_id=post_id)
+
+@login_required
+def assoc_category(request, post_id, category_id):
+  # Note that you can pass a toy's id instead of the whole object
+   Post.objects.get(id=post_id).categories.add(category_id)
+   return redirect('detail', post_id=post_id)
 
 def signup(request):
   error_message = ''
