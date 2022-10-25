@@ -35,6 +35,16 @@ header {
     background-size: cover;
 }
 
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 9vh
+}
+
+.dump {
+    color: white;
+}
+
 body {
     background-color:
         #fff0d9
@@ -147,4 +157,17 @@ h2 {
     font-family: 'Big Shoulders Text', cursive;
     font-size: 4vh;
     color:#4aa596
+}
+
+/* Registration */
+
+.log {
+    font-family: 'Big Shoulders Text', cursive;
+    text-align: center;
+    margin-bottom: 0;
+    color:#fe9f61
+}
+
+.needAcc {
+    font-size: larger;
 }

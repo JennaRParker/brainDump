@@ -14,12 +14,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@600&family=Montserrat+Subrayada&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@600&family=Montserrat+Subrayada&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    {% if user.is_authenticated %}
+    <div class="right">
+        <li><a href="/accounts/logout"><i class="medium material-icons">forward</i></a></li>
+    </div>
+    {% endif %}
     <header>
-        <h1>Brain. Dump</h1>
+        <h1>Brain <span class="dump">Dump</span></h1>
     </header>
     <main class="container">{% block content %} {% endblock %}</main>
     <footer>

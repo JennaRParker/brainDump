@@ -1,6 +1,6 @@
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
-  <h1>Sign Up</h1>
+  <h1 class="log">Sign Up</h1>
 
   {% if error_message %}
   <p class="red-text">{{ error_message }}</p>
@@ -9,7 +9,7 @@
   <form method="post" action="/accounts/signup/">
     {% csrf_token %} {{ form.as_p }}
     <input type="submit" class="btn" value="signup">
-    <p><a href="{% url 'login' %}">Log In</a> If You Already Have An Account</p>
+    <p class="needAcc"><a href="{% url 'login' %}">Log In</a> If You Already Have An Account</p>
   </form>
 
   {% endblock %}
