@@ -5,9 +5,7 @@
     {% for post in output %}
     <a href="{% url 'detail' post.id %}">
         <div class="post">
-            {% for category in post.category_set.all %}
-            <h2><span class="post-category">{{category.get_option_display}}</span></h2>
-            {% endfor %}
+            <h2><span class="post-category"></span></h2>
             <h1 class="post-title">{{ post.title }}</h1>
             <p class="post-date">{{ post.date }}</p>
         </div>
