@@ -5,7 +5,7 @@ from the_app.forms import CommentForm, CategoryForm
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from .models import Post
+from .models import Post, Category
 
 def about(request):
     return render(request, 'about.html')
@@ -18,7 +18,7 @@ def home(request):
 def post_detail(request, post_id):
         post = Post.objects.get(id=post_id)
         comment_form = CommentForm()
-        return render(request,'detail.html', {'post': post, 'comment_form': comment_form,})
+        return render(request,'detail.html', {'post': post, 'comment_form': comment_form})
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post

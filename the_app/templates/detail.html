@@ -2,10 +2,10 @@
 <div class="card" id="detail-card">
     <div class="card-content">
         <h1 class="post-title">{{ post.title }}</h1>
-        </div>
-        <p class="text">{{ post.text }}</p>
-      <p>{{ post.date }}</p>
     </div>
+    <p class="text">{{ post.text }}</p>
+    <p>{{ post.date }}</p>
+
     <div class="card-action">
         <a href="{% url 'post_update' post.id %}">Edit Text and Title</a>
         <a href="{% url 'post_delete' post.id %}">Delete</a>
@@ -18,9 +18,10 @@
     <p>{{comment.text}}</p>
     <p>{{comment.date}}</p>
     {% endfor %}
-  </div>
-  <script>
+</div>
+</div>
+<script>
     var selectEl = document.getElementById('id_option');
     M.FormSelect.init(selectEl);
-  </script>
+</script>
 {% endblock %}
