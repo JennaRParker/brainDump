@@ -1,11 +1,11 @@
 from django.shortcuts import redirect, render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm
-from the_app.forms import CommentForm, CategoryForm
+from the_app.forms import CommentForm
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from .models import Post, Category
+from .models import Post
 
 def about(request):
     return render(request, 'about.html')
@@ -29,7 +29,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
-    fields = ['text', 'title']
+    fields = ['title', 'text']
 
 class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post
@@ -42,15 +42,6 @@ def add_comment(request, post_id):
         new_comment = form.save(commit=False)
         new_comment.post_id=post_id
         new_comment.save()
-    return redirect('detail', post_id=post_id)
-
-@login_required
-def add_category(request, post_id):
-    form = CategoryForm(request.POST)
-    if form.is_valid():
-        new_category = form.save(commit=False)
-        new_category.post_id=post_id
-        new_category.save()
     return redirect('detail', post_id=post_id)
 
 def signup(request):

@@ -1,12 +1,7 @@
 from django.forms import ModelForm
-from .models import Comment, Category
+from .models import Comment
 
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ['text',]
-
-class CategoryForm(ModelForm):
-    class Meta:
-        model = Category
-        fields = ['option',]
