@@ -40,3 +40,4 @@
 * _Create a category model to group posts and display the category on the post on the Home page_
 * _Likes and Dislikes_
 * _Edit and Delete functionality for Comment model_
+* _CRUD functionality only when users are logged in_
