@@ -23,7 +23,7 @@
 
 ## Design Inspiration
 
-### _70s Retro revival https://www.envato.com/blog/retro-graphic-design-trends/
+### _70s Retro revival_ https://www.envato.com/blog/retro-graphic-design-trends/
 
 ![style](https://user-images.githubusercontent.com/111609911/197914520-bf5e1095-f29f-46be-a0cb-05e34251f83d.png)
 
